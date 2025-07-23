@@ -1,0 +1,27 @@
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Variables ***
+${URL_CONTEXT_MENU}    https://swisnl.github.io/jQuery-contextMenu/demo.html
+${URL_TEST_SITE}       https://testautomationpractice.blogspot.com/
+${URL_DRAG_DROP}       https://demoqa.com/droppable/
+
+*** Test Cases ***
+
+Open Browser To Context Menu Demo
+    Open Browser    ${URL_CONTEXT_MENU}    chrome
+
+Open Context Menu
+    open context menu  xpath:/html/body/div/section/div/div/div/p
+
+Go To Test Site
+    Go To    ${URL_TEST_SITE}
+
+Double Click Element
+    Double Click Element    xpath://*[@id="HTML10"]/div[1]/button
+
+Go To Drag And Drop Site
+    Go To    ${URL_DRAG_DROP}
+
+Drag And Drop Item
+    Drag And Drop    id:draggable    id:droppable

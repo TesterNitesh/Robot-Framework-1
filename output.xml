@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.12.6 on win32)" generated="2025-01-16T13:53:17.565474" rpa="false" schemaversion="5">
+<suite id="s1" name="Authentication" source="C:\Users\nitdhas\PycharmProjects\Auto Assignments-Login\authentication.robot">
+<test id="s1-t1" name="Login Test Case" line="11">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-01-16T13:53:17.860124" level="INFO">Opening browser 'chrome' to base url 'http://practice.automationtesting.in/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-01-16T13:53:17.860124" elapsed="3.937829"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-01-16T13:53:21.799954" elapsed="0.055034"/>
+</kw>
+<kw name="Click My Account Menu">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2025-01-16T13:53:21.856988" level="INFO">Clicking link 'xpath=//a[text()='My Account']'.</msg>
+<arg>xpath=//a[text()='My Account']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T13:53:21.855986" elapsed="0.485783"/>
+</kw>
+<status status="PASS" start="2025-01-16T13:53:21.855986" elapsed="0.486780"/>
+</kw>
+<kw name="Enter Credentials">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-16T13:53:22.342766" level="INFO">Typing text 'ravanmaharaj979@gmail.com' into text field 'xpath=//*[@id='username']'.</msg>
+<arg>xpath=//*[@id='username']</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T13:53:22.342766" elapsed="0.188113"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-01-16T13:53:22.531911" level="INFO">Typing text 'ravanmaharaj@979' into text field 'xpath=//*[@id='password']'.</msg>
+<arg>xpath=//*[@id='password']</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T13:53:22.530879" elapsed="0.082098"/>
+</kw>
+<status status="PASS" start="2025-01-16T13:53:22.342766" elapsed="0.270211"/>
+</kw>
+<kw name="Click Login Button">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-01-16T13:53:22.613976" level="INFO">Clicking button 'xpath=//*[@name='login']'.</msg>
+<arg>xpath=//*[@name='login']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-01-16T13:53:22.613976" elapsed="0.433771"/>
+</kw>
+<status status="PASS" start="2025-01-16T13:53:22.612977" elapsed="0.434770"/>
+</kw>
+<kw name="Verify Successful Login">
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-01-16T13:53:23.182948" level="INFO">Element 'xpath=//*[text()='Dashboard']' contains text 'Dashboard'.</msg>
+<arg>xpath=//*[text()='Dashboard']</arg>
+<arg>Dashboard</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-01-16T13:53:23.048753" elapsed="0.134195"/>
+</kw>
+<status status="PASS" start="2025-01-16T13:53:23.047747" elapsed="0.136244"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-01-16T13:53:23.183991" elapsed="2.279738"/>
+</kw>
+<status status="PASS" start="2025-01-16T13:53:17.859020" elapsed="7.604709"/>
+</test>
+<status status="PASS" start="2025-01-16T13:53:17.568476" elapsed="7.897257"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Authentication">Authentication</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

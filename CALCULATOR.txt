@@ -1,0 +1,49 @@
+*** Settings ***
+Library    SeleniumLibrary
+
+*** Variables ***
+${URL}              https://www.calculator.net/
+${BROWSER}          chrome
+${FIRST_NUMBER}     20
+${SECOND_NUMBER}    1
+${SUM_RESULT}       21
+${DIFFERENCE_RESULT}    20
+${PRODUCT_RESULT}   20
+
+*** Test Cases ***
+Addition Test
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    set selenium speed  3 second
+    Click Button    xpath=/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[3]/span[2]
+    Click Button    xpath=/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[4]/span[1]
+    Click Button    xpath=/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[1]/span[4]
+    Click Button    xpath=/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[3]/span[1]
+    Click Button    xpath=/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[5]/span[4]
+    ${result}=  Get Text    xpath=/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[1]/td/div/div[2]
+    Should Be Equal As Numbers    ${result}    ${SUM_RESULT}
+    Close Browser
+
+Subtraction Test
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[3]/span[2]
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[4]/span[1]
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[2]/span[4]
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[3]/span[1]
+    Click Button    xpath://input[@value='='']
+    ${result}=  Get Text    xpath://div[@id='sciOutPut']
+    Should Be Equal As Numbers    ${result}    ${DIFFERENCE_RESULT}
+    Close Browser
+
+Multiplication Test
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[3]/span[2]
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[4]/span[1]
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[3]/span[4]
+    Click Button    xpath:/html/body/div[3]/div/table/tbody/tr/td[1]/table/tbody/tr[2]/td[2]/div/div[3]/span[1]
+    Click Button    xpath://input[@value='='']
+    ${result}=  Get Text    xpath://div[@id='sciOutPut']
+    Should Be Equal As Numbers    ${result}    ${PRODUCT_RESULT}
+    Close Browser

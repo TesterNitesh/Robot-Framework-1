@@ -1,0 +1,17 @@
+*** Settings ***
+Library  SeleniumLibrary
+
+*** Variables ***
+${URL}            https://www.google.com
+${BROWSER}        chrome
+${SEARCH}    Robot Framework
+
+*** Test Cases ***
+Google Search Test
+    Open Browser    ${URL}    ${BROWSER}
+    Maximize Browser Window
+    Input Text    id:APjFqb    ${SEARCH}
+    Click Element    xpath:/html/body/div[1]/div[3]/form/div[1]/div[1]/div[4]/center/input[1]
+    Wait Until Page Contains    Robot Framework
+    Page Should Contain    Robot Framework
+    Close Browser
